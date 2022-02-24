@@ -1,0 +1,46 @@
+{
+  "name": "react-native-expo-pie-chart",
+  "version": "0.1.0",
+  "description": "A customizable Pie Chart library that uses react-native-svg.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "expo",
+    "chart",
+    "pie-chart"
+  ],
+  "author": "Mohamed Said Sallam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart/issues"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.1",
+    "react-native": ">=0.64.3",
+    "react-native-svg": ">=12.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^2.5.1"
+  },
+  "files": [
+    "!example",
+    "src/*"
+  ]
+}
