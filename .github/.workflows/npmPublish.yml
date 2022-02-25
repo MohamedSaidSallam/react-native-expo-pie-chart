@@ -1,0 +1,27 @@
+name: NPM_Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  npm_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm ci
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
