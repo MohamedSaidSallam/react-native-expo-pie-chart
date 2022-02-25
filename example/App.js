@@ -7,24 +7,24 @@ const App = () => (
     <PieChart
       data={[
         {
-          key: 'correctCount',
-          count: 15,
-          color: 'red',
+          key: 'First Data',
+          count: 20,
+          color: 'blue',
         },
         {
-          key: 'incorrectCount',
-          count: 20,
+          key: 'Second Data',
+          count: 25,
           color: 'yellow',
         },
         {
-          key: 'answersShownCount',
-          count: 30,
-          color: 'purple',
+          key: 'Third Data',
+          count: 40,
+          color: 'green',
         },
         {
-          key: 'skippedCount',
-          count: 10,
-          color: 'green',
+          key: 'Forth Data',
+          count: 35,
+          color: 'orange',
         },
       ]}
       length={200}
