@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,node
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,yalc
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,yalc
 
 ### Node ###
 # Logs
@@ -163,4 +163,11 @@ dist
 
 # Support for Project snippet scope
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
+### yalc ###
+# yalc
+# https://www.npmjs.com/package/yalc/v/1.0.0-pre.17#keep-it-out-of-git
+
+.yalc
+yalc.lock
+
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,yalc
