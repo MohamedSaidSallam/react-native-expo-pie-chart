@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { PieChart } from 'react-native-expo-pie-chart';
+import PieChart from 'react-native-expo-pie-chart';
 
 const App = () => (
   <View style={styles.container}>
