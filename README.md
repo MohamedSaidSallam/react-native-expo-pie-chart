@@ -24,6 +24,8 @@ npm i react-native-expo-pie-chart
 ## Usage
 
 ```jsx
+import { PieChart } from 'react-native-expo-pie-chart';
+
 <PieChart
     data={[
     {
