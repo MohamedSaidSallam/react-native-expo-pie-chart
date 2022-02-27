@@ -147,7 +147,9 @@ const PieChartComponent: FunctionComponent<PieChartProps> = ({
 
 PieChartComponent.defaultProps = defaultProps;
 
-export const PieChart = React.memo(PieChartComponent);
+const PieChart = React.memo(PieChartComponent);
+
+export default PieChart;
 
 const styles = StyleSheet.create({
   container: {
