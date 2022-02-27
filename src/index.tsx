@@ -1,5 +1,3 @@
-// todo compile
-
 import React, { FunctionComponent, useMemo } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import Svg, {
@@ -53,7 +51,7 @@ const CircleWrapper = (props: CircleProps) => (
   />
 );
 
-const PieChart: FunctionComponent<PieChartProps> = ({
+const PieChartComponent: FunctionComponent<PieChartProps> = ({
   data,
   length,
   rotation,
@@ -141,9 +139,9 @@ const PieChart: FunctionComponent<PieChartProps> = ({
   );
 };
 
-PieChart.defaultProps = defaultProps;
+PieChartComponent.defaultProps = defaultProps;
 
-export default React.memo(PieChart);
+export const PieChart = React.memo(PieChartComponent);
 
 const styles = StyleSheet.create({
   container: {
