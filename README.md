@@ -1,10 +1,10 @@
 # react-native-expo-pie-chart
 
-![npm](https://img.shields.io/npm/v/react-native-expo-pie-chart)
-![npm](https://img.shields.io/npm/dw/react-native-expo-pie-chart)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-native-expo-pie-chart)
-![GitHub issues](https://img.shields.io/github/issues-raw/TheDigitalPhoenixX/react-native-expo-pie-chart)
-![Npm Publish Workflow](https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart/actions/workflows/npmPublish.yml/badge.svg)
+[![npm](https://img.shields.io/npm/v/react-native-expo-pie-chart)](https://www.npmjs.com/package/react-native-expo-pie-chart)
+[![npm](https://img.shields.io/npm/dw/react-native-expo-pie-chart)](https://www.npmjs.com/package/react-native-expo-pie-chart)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/react-native-expo-pie-chart)](https://www.npmjs.com/package/react-native-expo-pie-chart)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheDigitalPhoenixX/react-native-expo-pie-chart)](https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart/issues)
+[![Npm Publish Workflow](https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart/actions/workflows/npmPublish.yml/badge.svg)](https://github.com/TheDigitalPhoenixX/react-native-expo-pie-chart/actions)
 [![License][license-image]][license-url]
 
 A customizable Pie Chart library that uses [react-native-svg][react-native-svg-link]. Can be used for react native & expo.
