@@ -91,50 +91,48 @@ const PieChartComponent: FunctionComponent<PieChartProps> = ({
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...containerProps}
     >
-      <View style={styles.graphWrapper}>
-        <Svg
-          height={length.toString()}
-          width={length.toString()}
-          viewBox={`0 0 ${length} ${length}`}
+      <Svg
+        height={length.toString()}
+        width={length.toString()}
+        viewBox={`0 0 ${length} ${length}`}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...svgProps}
+      >
+        <G
+          rotation={rotation}
+          originX={length / 2}
+          originY={length / 2}
           // eslint-disable-next-line react/jsx-props-no-spreading
-          {...svgProps}
+          {...gProps}
         >
-          <G
-            rotation={rotation}
-            originX={length / 2}
-            originY={length / 2}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...gProps}
-          >
-            {total === 0 ? (
+          {total === 0 ? (
+            <CircleWrapper
+              r={radius}
+              stroke={zeroTotalCircleColor}
+              strokeWidth={strokeWidth}
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...circleProps}
+            />
+          ) : (
+            filledData.map((item, i, arr) => (
               <CircleWrapper
+                key={item.key}
                 r={radius}
-                stroke={zeroTotalCircleColor}
+                stroke={item.color}
                 strokeWidth={strokeWidth}
+                strokeDasharray={circleCircumference}
+                strokeDashoffset={item.strokeDashoffset}
+                rotation={i === 0 ? 0 : arr[i - 1].angle}
+                originX={length / 2}
+                originY={length / 2}
+                strokeLinecap="round"
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...circleProps}
               />
-            ) : (
-              filledData.map((item, i, arr) => (
-                <CircleWrapper
-                  key={item.key}
-                  r={radius}
-                  stroke={item.color}
-                  strokeWidth={strokeWidth}
-                  strokeDasharray={circleCircumference}
-                  strokeDashoffset={item.strokeDashoffset}
-                  rotation={i === 0 ? 0 : arr[i - 1].angle}
-                  originX={length / 2}
-                  originY={length / 2}
-                  strokeLinecap="round"
-                  // eslint-disable-next-line react/jsx-props-no-spreading
-                  {...circleProps}
-                />
-              ))
-            )}
-          </G>
-        </Svg>
-      </View>
+            ))
+          )}
+        </G>
+      </Svg>
     </View>
   );
 };
@@ -148,9 +146,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  graphWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
