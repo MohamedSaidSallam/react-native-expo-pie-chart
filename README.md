@@ -23,6 +23,8 @@ npm i react-native-expo-pie-chart
 
 ## Usage
 
+View it live: [Expo Snack](https://snack.expo.dev/@digitalphoenixx/7dfecf)
+
 ```jsx
 import PieChart from 'react-native-expo-pie-chart';
 
