@@ -61,29 +61,37 @@ const PieChartComponent: FunctionComponent<PieChartProps> = ({
   gProps,
   circleProps,
 }) => {
-  const strokeWidth = length * 0.25;
-  const radius = length / 2 - strokeWidth / 2;
-  const circleCircumference = useMemo(() => 2 * Math.PI * radius, [radius]);
-  const total = useMemo(
-    () => data.reduce((prev, current) => prev + current.count, 0),
-    [data]
-  );
-  const filledData = useMemo(
-    () =>
-      data.reduce<filledDataItem[]>((prev, current, i) => {
-        const percentage = (current.count / total) * 100;
-        prev.push({
-          ...current,
-          percentage,
-          strokeDashoffset:
-            circleCircumference - (circleCircumference * percentage) / 100,
-          angle:
-            (i === 0 ? 0 : prev[i - 1].angle) + (current.count / total) * 360,
-        });
-        return prev;
-      }, []),
-    [data]
-  );
+  const { strokeWidth, radius, circleCircumference } = useMemo(() => {
+    const newStrokeWidth = length * 0.25;
+    const newRadius = length / 2 - newStrokeWidth / 2;
+    return {
+      strokeWidth: newStrokeWidth,
+      radius: newRadius,
+      circleCircumference: 2 * Math.PI * newRadius,
+    };
+  }, [length]);
+
+  const { total, filledData } = useMemo(() => {
+    const newTotal = data.reduce((prev, current) => prev + current.count, 0);
+
+    const newFilledData = data.reduce<filledDataItem[]>((prev, current, i) => {
+      const percentage = (current.count / newTotal) * 100;
+      prev.push({
+        ...current,
+        percentage,
+        strokeDashoffset:
+          circleCircumference - (circleCircumference * percentage) / 100,
+        angle:
+          (i === 0 ? 0 : prev[i - 1].angle) + (current.count / newTotal) * 360,
+      });
+      return prev;
+    }, []);
+
+    return {
+      total: newTotal,
+      filledData: newFilledData,
+    };
+  }, [circleCircumference, data]);
 
   return (
     <View
